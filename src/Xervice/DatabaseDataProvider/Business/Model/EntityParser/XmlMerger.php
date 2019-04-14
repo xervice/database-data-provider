@@ -72,7 +72,7 @@ class XmlMerger implements XmlMergerInterface
         $type = $this->convertPropelType($type);
 
         $data = [
-            'name' => (string)$element->attributes()['name'],
+            'name' => ucfirst((string)$element->attributes()['name']),
             'allownull' => (bool)$element->attributes()['allownull'],
             'default' => (string)$element->attributes()['default'],
             'type' => $this->getVariableType($type),
@@ -231,7 +231,7 @@ class XmlMerger implements XmlMergerInterface
             $fieldName = (string)$element->attributes()['foreignTable'];
 
             $data = [
-                'name' => $fieldName,
+                'name' => ucfirst($fieldName),
                 'allownull' => true,
                 'default' => null,
                 'type' => '\DataProvider\\' . ucfirst($fieldName) . 'EntityDataProvider',
