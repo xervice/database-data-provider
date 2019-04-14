@@ -5,7 +5,7 @@
 >
 
 
-    <table name="Test">
+    <table name="test">
         <column name="id" autoIncrement="true" required="true" primaryKey="true" type="INTEGER"/>
         <column name="name" type="VARCHAR"/>
 
@@ -14,12 +14,12 @@
         </unique>
     </table>
 
-    <table name="Tester">
+    <table name="tester">
         <column name="id" autoIncrement="true" required="true" primaryKey="true" type="INTEGER"/>
         <column name="testid" required="true" type="INTEGER"/>
         <column name="name" type="VARCHAR"/>
 
-        <foreign-key foreignTable="Test">
+        <foreign-key foreignTable="test">
             <reference local="testid" foreign="id"/>
         </foreign-key>
     </table>

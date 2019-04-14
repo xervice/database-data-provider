@@ -47,6 +47,7 @@ class XmlMerger implements XmlMergerInterface
     private function parseTable(\SimpleXMLElement $xmlTable): string
     {
         $dataProvider = (string)$xmlTable->attributes()['name'] . 'Entity';
+        $dataProvider = ucfirst($dataProvider);
         if (!isset($this->mergedXml[$dataProvider])) {
             $this->mergedXml[$dataProvider] = [
                 'configs' => [
@@ -233,7 +234,7 @@ class XmlMerger implements XmlMergerInterface
                 'name' => $fieldName,
                 'allownull' => true,
                 'default' => null,
-                'type' => '\DataProvider\\' . $fieldName . 'EntityDataProvider',
+                'type' => '\DataProvider\\' . ucfirst($fieldName) . 'EntityDataProvider',
                 'is_collection' => false,
                 'is_dataprovider' => true,
                 'isCamelCase' => false
