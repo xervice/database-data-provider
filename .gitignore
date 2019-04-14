@@ -1,0 +1,11 @@
+/.idea
+/vendor
+/config/propel.json
+/src/Generated/*
+/src/Orm/*
+!/src/Generated/Ide
+/src/Generated/Ide/*
+/composer.lock
+/tests/_output
+/tests/_support/_generated
+!.gitkeep
