@@ -71,10 +71,12 @@ class XmlMerger implements XmlMergerInterface
         $type = (string)$element->attributes()['type'];
         $type = $this->convertPropelType($type);
 
+        $required = ((string) $element->attributes()['required']) === 'true';
+
         $data = [
             'name' => ucfirst((string)$element->attributes()['name']),
-            'allownull' => (bool)$element->attributes()['allownull'],
-            'default' => (string)$element->attributes()['default'],
+            'allownull' => (!$required),
+            'default' => (string)$element->attributes()['defaultValue'],
             'type' => $this->getVariableType($type),
             'is_collection' => $this->isCollection($type),
             'is_dataprovider' => $this->isDataProvider($type),

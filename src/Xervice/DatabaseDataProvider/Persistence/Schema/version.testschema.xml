@@ -7,7 +7,8 @@
 
     <table name="test">
         <column name="id" autoIncrement="true" required="true" primaryKey="true" type="INTEGER"/>
-        <column name="name" type="VARCHAR"/>
+        <column name="name" required="true" type="VARCHAR"/>
+        <column name="info" required="false" type="VARCHAR"/>
 
         <unique>
             <unique-column name="id"/>
