@@ -178,10 +178,8 @@ class XmlMerger implements XmlMergerInterface
             case 'TIMESTAMP':
                 $type = 'int';
                 break;
-            case 'DOUBLE':
-                $type = 'double';
-                break;
             case 'FLOAT':
+            case 'DOUBLE':
                 $type = 'float';
                 break;
             case 'OBJECT':
